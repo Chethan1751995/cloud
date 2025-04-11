@@ -2,535 +2,985 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cloudrigade Technologies</title>
 
-  <!-- Stylesheets -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
- <style>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
     body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f5f9ff, #eaf6ff);
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-      color: #333;
-      overflow-x: hidden;
+      padding: 0;
     }
-    header, footer {
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeIn 1.5s ease-out forwards;
+
+    .navbar-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 1rem 2rem;
+      margin: 1rem auto;
+      max-width: 1200px;
+      transition: all 0.3s ease-in-out;
     }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #0d6efd, #20c997);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
     }
-    .carousel-item {
+
+    .navbar-brand img {
+      width: 30px;
+      margin-right: 10px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #0d6efd;
+      margin: 0 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #20c997;
+    }
+
+    .btn-cta {
+      background: linear-gradient(to right, #0d6efd, #20c997);
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .btn-cta:hover {
+      background: linear-gradient(to right, #20c997, #0d6efd);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header / Navbar -->
+<nav class="navbar navbar-expand-lg navbar-glass">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="https://img.icons8.com/ios-filled/50/0d6efd/cloud.png" alt="Logo">
+      Cloudrigade
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBest" aria-controls="navbarBest" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarBest">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Call to Action -->
+      <div class="d-none d-lg-block ms-auto">
+        <a href="#contact" class="btn btn-cta">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Slider Section -->
+<section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+  
+      <!-- Carousel Inner -->
+      <div class="carousel-inner">
+  
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/1600x900/?technology,cloud');">
+          <div class="carousel-overlay d-flex justify-content-center align-items-center text-center">
+            <div class="text-white px-3">
+              <h1 class="display-4 fw-bold">Empowering the Future</h1>
+              <p class="lead">Delivering cutting-edge cloud and IT solutions for modern businesses.</p>
+              <p class="lead">We build what powers your digital world.</p>
+              <a href="#about" class="btn btn-primary mt-3 px-4 py-2">Read More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/1600x900/?server,data');">
+          <div class="carousel-overlay d-flex justify-content-center align-items-center text-center">
+            <div class="text-white px-3">
+              <h1 class="display-4 fw-bold">Secure & Scalable Infrastructure</h1>
+              <p class="lead">We engineer high-performance systems with unmatched security.</p>
+              <p class="lead">Built for today. Ready for tomorrow.</p>
+              <a href="#services" class="btn btn-primary mt-3 px-4 py-2">Read More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/1600x900/?coding,tech');">
+          <div class="carousel-overlay d-flex justify-content-center align-items-center text-center">
+            <div class="text-white px-3">
+              <h1 class="display-4 fw-bold">Your Innovation Partner</h1>
+              <p class="lead">We develop custom digital solutions tailored to your goals.</p>
+              <p class="lead">From idea to launch — we’re with you all the way.</p>
+              <a href="#contact" class="btn btn-primary mt-3 px-4 py-2">Read More</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+  
+  <!-- Custom Styles for Hero Section -->
+  <style>
+    #hero {
+      background-color: #0d6efd; /* Blue background */
+    }
+  
+    #hero .carousel-item {
       height: 100vh;
       background-size: cover;
       background-position: center;
       position: relative;
-      transition: opacity 1s ease-in-out;
     }
-    .hero-overlay {
+  
+    .carousel-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 139, 0.6);
-      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Dark overlay */
     }
-    .carousel-caption {
-      z-index: 2;
-      animation: slideInUp 1s ease-out;
+  
+    #hero h1,
+    #hero p {
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
     }
-    @keyframes slideInUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .carousel-caption h1 { font-size: 3rem; font-weight: bold; }
-    .carousel-caption p { font-size: 1.2rem; }
-    .carousel-caption i {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      display: block;
-      color: #20C997;
-    }
-    .carousel-button {
-      margin-top: 20px;
-      background-color: #20C997;
+  
+    #hero .btn-primary {
+      background: linear-gradient(to right, #0d6efd, #20c997);
       border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      color: white;
-      font-weight: bold;
-      transition: transform 0.3s ease;
     }
-    .carousel-button:hover {
-      transform: scale(1.05);
+  
+    #hero .btn-primary:hover {
+      background: linear-gradient(to right, #20c997, #0d6efd);
     }
-    .service-card {
-      padding: 20px;
-      border-radius: 20px;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      text-align: center;
-    }
-    .service-card i {
-      font-size: 2rem;
-      color: #20C997;
-      margin-bottom: 10px;
+  
+    .carousel-indicators [data-bs-target] {
+      background-color: white;
     }
   </style>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-      color: #333;
-      overflow-x: hidden;
-      perspective: 1200px; /* Adds a global 3D perspective */
-    }
-  
-    .service-card {
-      padding: 20px;
-      border-radius: 20px;
-      background: #fff;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.6s ease, box-shadow 0.6s ease;
-      transform-style: preserve-3d;
-      will-change: transform;
-      cursor: pointer;
-    }
-  
-    .service-card:hover {
-      transform: rotateY(8deg) rotateX(8deg) scale(1.03);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
-    }
-  
-    .carousel-caption {
-      backface-visibility: hidden;
-      transform-style: preserve-3d;
-    }
-  
-    .carousel-item {
-      transform: translateZ(0);
-    }
-  
-    .hero-overlay {
-      background: linear-gradient(135deg, rgba(0, 0, 139, 0.6), rgba(32, 201, 151, 0.5));
-    }
-  
-    .carousel-caption h1,
-    .carousel-caption p {
-      transform: translateZ(30px);
-    }
-  
-    .service-grid {
-      transform-style: preserve-3d;
-    }
-  </style>
-  
-</head>
-<body>
 
-  <!-- Header -->
-  <header class="bg-white text-dark p-3 shadow-sm">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h2 class="mb-0">Cloudrigade</h2>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-dark" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="About.html">About</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="#">Upcoming</a></li>
-        </ul>
-      </nav>
-      <a href="/contact" class="btn btn-outline-success">Contact</a>
-    </div>
-  </header>
-
-  <!-- Hero Carousel -->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5"></button>
-    </div>
-
-    <div class="carousel-inner">
-      <!-- Each Slide -->
-      <!-- Slide 1 -->
-      <div class="carousel-item active" style="background-image: url('Managed.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-          <h1>IT Managed Services </h1>
-          <p>Our IT Managed Services act as your extended IT department, ensuring your infrastructure is always optimized, secure, and aligned with your business goals.</p>
-          <a href="/services/it-infrastructure.html" class="carousel-button">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item" style="background-image: url('Reliable.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-          <h1>Software Development & Maintenance</h1>
-          <p>We craft tailored software solutions that address your exact business needs, combining deep technical expertise with user-focused design.</p>
-          <a href="/services/it-management.html" class="carousel-button">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item" style="background-image: url('Software.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-          <h1>Cloud Computing & SaaS Solutions</h1>
-          <p>Transition to cloud-based operations with our full-suite solutions. Reduce costs, increase scalability, and improve remote collaboration.</p>
-          <a href="/services/software-development.html" class="carousel-button">Explore Software</a>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="carousel-item" style="background-image: url('Cloud\ \ SaaS.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-          <h1>IT Consultancy & Digital Transformation </h1>
-          <p>Bridge the gap between where you are and where you want to be. Our consultants guide your journey with actionable insights and transformation plans.</p>
-          <a href="/services/cloud-solutions.html" class="carousel-button">Discover Cloud</a>
-        </div>
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="carousel-item" style="background-image: url('cybersecurity.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-          <h1>Cybersecurity & Data Protection</h1>
-          <p>In a hyperconnected world, your data and systems need uncompromising protection. We build layered, adaptive security architectures.</p>
-          <a href="/services/cybersecurity.html" class="carousel-button">View Security</a>
-        </div>
-      </div>
-
-      <!-- Slide 6 -->
-      <div class="carousel-item" style="background-image: url('Digital.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-          <h1>IT-Enabled Services (ITES)</h1>
-          <p>Our ITES offerings support digital business operations—from customer interaction tools to employee efficiency boosters.</p>
-          <a href="/services/consulting.html" class="carousel-button">Consult Now</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-
-  <!-- About Section -->
-  <section class="py-5 bg-light text-center">
+<!-- About Us Section (White Background) -->
+<section class="about-section py-5 bg-white" id="about">
     <div class="container">
-      <h2 class="mb-3">Empowering Businesses with Advanced IT Solutions</h2>
-      <p class="lead">At Cloudrigade Technology Private Limited, we specialize in providing cutting-edge IT services tailored to your business-from infrastructure to innovation.</p>
-    </div>
-  <section class="hero">
-    <h1>Our Services</h1>
-    <p>Comprehensive solutions to power your digital transformation.</p>
-  </section>
-
-  <section class="service-grid container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="service-card">
-          <i class="fas fa-network-wired"></i>
-          <h5>IT Managed Services</h5>
-          <p>Setup and manage reliable, secure, and scalable IT infrastructure.</p>
-          <a href="services/it-infrastructure.html">Learn more →</a>
+      <div class="row align-items-center g-5">
+  
+        <!-- Left Side (Tabs + Content) -->
+        <div class="col-lg-6">
+          <h5 class="fw-semibold text-uppercase text-accent mb-4">About Us</h5>
+  
+          <!-- Tabs -->
+          <ul class="nav nav-pills mb-3 soft-tabs p-1 rounded-pill" id="aboutTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="company-tab" data-bs-toggle="pill" data-bs-target="#company" type="button" role="tab">Company</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="mission-tab" data-bs-toggle="pill" data-bs-target="#mission" type="button" role="tab">Mission</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="vision-tab" data-bs-toggle="pill" data-bs-target="#vision" type="button" role="tab">Vision</button>
+            </li>
+          </ul>
+  
+          <!-- Tab Content -->
+          <div class="tab-content p-4 rounded-4 " id="aboutTabContent">
+            <div class="tab-pane fade show active" id="company" role="tabpanel">
+              <h3 class="fw-bold mb-3 text-dark">Who We Are</h3>
+              <p class="text-muted">Cloudrigade Technologies crafts seamless digital ecosystems using the latest tech — from cloud automation to scalable architecture for modern enterprises.</p>
+              <a href="#contact" class="btn btn-accent mt-3">Learn More</a>
+            </div>
+            <div class="tab-pane fade" id="mission" role="tabpanel">
+              <h3 class="fw-bold mb-3 text-dark">Our Mission</h3>
+              <p class="text-muted">To empower businesses through secure, scalable, and smart solutions that fuel digital transformation and deliver lasting impact.</p>
+              <!-- <a href="#contact" class="btn btn-accent mt-3">Learn More</a> -->
+            </div>
+            <div class="tab-pane fade" id="vision" role="tabpanel">
+              <h3 class="fw-bold mb-3 text-dark">Our Vision</h3>
+              <p class="text-muted">To be the global leader in tech innovation — building future-proof platforms that connect people, systems, and data seamlessly.</p>
+              <!-- <a href="#contact" class="btn btn-accent mt-3">Learn More</a> -->
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <i class="fas fa-code-branch"></i>
-          <h5>Software Development & Maintenance</h5>
-          <p>Build high-performance web and mobile applications tailored to your needs.</p>
-          <a href="services/cloud-solutions.html">Learn more →</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <i class="fas fa-laptop-code"></i>
-          <h5>Cloud Computing & SaaS Solutions</h5>
-          <p>Migrate, manage, and scale in the cloud with confidence.</p>
-          <a href="/services/">Learn more →</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <i class="fas fa-lock"></i>
-          <h5>IT Consultancy & Digital Transformation</h5>
-          <p>Strategic guidance to optimize your tech stack and digital roadmap.</p>
-          <a href="services/cybersecurity.html">Learn more →</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <i class="fas fa-chart-line"></i>
-          <h5>Cybersecurity & Data Protection</h5>
-          <p>Protect your digital assets with modern security strategies and tools.</p>
-          <a href="services/consulting.html">Learn more →</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <i class="fas fa-database"></i>
-          <h5>IT-Enabled Services(ITES)</h5>
-          <p>digital business operations, customer interaction tools, employee efficiency boosters.</p>
-          <a href="services/cloud-solutions.html">Learn more →</a>
+  
+        <!-- Right Side Image -->
+        <div class="col-lg-6 text-center">
+          <div class="image-wrapper position-relative">
+            <img src="/About.jpg" alt="About" class="img-fluid rounded-4 ">
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Choose Cloudrigade</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
-      color: #1b1b1b;
     }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
+  
+    .text-accent {
+      color: #0d6efd;
     }
-
-    .title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #20C997;
+  
+    .btn-accent {
+      background-color: #0d6efd;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+  
+    .btn-accent:hover {
+      background-color: #20c997;
+      color: white;
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-    }
-
-    .card h3 {
-      color: #20C997;
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .card p {
-      font-size: 1rem;
-      line-height: 1.6;
+  
+    .soft-tabs .nav-link {
+      background: #f0f4f8;
       color: #333;
+      font-weight: 500;
+      margin: 0 5px;
+      border-radius: 30px;
+      padding: 0.5rem 1.2rem;
+      transition: all 0.3s ease;
     }
-
+  
+    .soft-tabs .nav-link.active {
+      background: #0d6efd;
+      color: white;
+    }
+  
+    .tab-content {
+      background: #ffffff;
+    }
+  
     @media (max-width: 768px) {
-      .title {
-        font-size: 2rem;
+      .soft-tabs {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
 
-<section>
-  <h2 class="title">Why Choose Cloudrigade.?</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>🚀 Innovation-Driven</h3>
-      <p>We create cutting-edge, future-ready tech solutions tailored for tomorrow’s challenges.</p>
-    </div>
-    <div class="card">
-      <h3>🛡️ Security First</h3>
-      <p>Our infrastructure and software are designed with security at their core—no compromises.</p>
-    </div>
-    <div class="card">
-      <h3>🧠 Expert Team</h3>
-      <p>Backed by certified professionals with deep experience across cloud, cybersecurity, and DevOps.</p>
-    </div>
-    <div class="card">
-      <h3>⚙️ End-to-End Services</h3>
-      <p>From strategy to support, we offer complete IT solutions for every stage of your business growth.</p>
-    </div>
-    <div class="card">
-      <h3>☁️ Cloud-Native</h3>
-      <p>We build scalable and agile systems optimized for cloud performance and cost-efficiency.</p>
-    </div>
-    <div class="card">
-      <h3>🎯 Client-Centric</h3>
-      <p>Your business goals guide our solutions—every time, with precision and care.</p>
-    </div>
-    <div class="card">
-      <h3>🕒 24/7 Support</h3>
-      <p>Round-the-clock assistance ensures your operations run smoothly and efficiently, always.</p>
-    </div>
+
+
+<!-- Services Overview Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h5 class="text-accent fw-semibold text-uppercase">What We Offer</h5>
+        <h2 class="fw-bold">Our Core Services</h2>
+        <p class="text-muted">Cloudrigade delivers robust, secure, and scalable tech solutions tailored to your needs.</p>
+      </div>
   
-  </div>
-</section>
-  <!-- Footer -->
-   <!-- ABOUT US SECTION START -->
-<section class="about-section py-5" style="background: radial-gradient(circle at top right, #e0f7fa, #ffffff); font-family: 'Open Sans', sans-serif;">
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
+            <div class="icon mb-4">
+              <img src="https://img.icons8.com/fluency/48/cloud-storage.png" alt="Cloud Services">
+            </div>
+            <h5 class="fw-bold">Cloud Solutions</h5>
+            <p class="text-muted">Deploy, scale, and manage your infrastructure on the cloud with ease and security.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
+            <div class="icon mb-4">
+              <img src="https://img.icons8.com/color/48/data-encryption.png" alt="Security Services">
+            </div>
+            <h5 class="fw-bold">Cybersecurity</h5>
+            <p class="text-muted">Protect your business with next-gen security tools and proactive monitoring.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
+            <div class="icon mb-4">
+              <img src="https://img.icons8.com/fluency/48/code.png" alt="Development">
+            </div>
+            <h5 class="fw-bold">Custom Development</h5>
+            <p class="text-muted">From mobile apps to enterprise systems — we build solutions that scale with you.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Custom CSS for Services -->
+  <style>
+    .text-accent {
+      color: #0d6efd;
+    }
+  
+    .service-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+    }
+  
+    .service-card .icon img {
+      width: 48px;
+      height: 48px;
+    }
+  
+    @media (max-width: 767px) {
+      .service-card {
+        text-align: center;
+      }
+    }
+  </style>
+
+<!-- Why Choose Us Section -->
+<section id="why-choose-us" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h5 class="text-accent text-uppercase fw-semibold">Why Choose Us</h5>
+        <h2 class="fw-bold">Trusted by Innovators Worldwide</h2>
+        <p class="text-muted">Our proven experience, expert team, and commitment to quality make Cloudrigade the ideal tech partner.</p>
+      </div>
+  
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card text-center p-4 rounded-4 shadow-sm h-100">
+            <div class="icon mb-3">
+              <img src="https://img.icons8.com/fluency/48/checked--v1.png" alt="Reliable">
+            </div>
+            <h6 class="fw-bold">Reliable Delivery</h6>
+            <p class="text-muted small">Timely and consistent delivery of solutions, no matter the scale or complexity.</p>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card text-center p-4 rounded-4 shadow-sm h-100">
+            <div class="icon mb-3">
+              <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="Expertise">
+            </div>
+            <h6 class="fw-bold">Tech Expertise</h6>
+            <p class="text-muted small">Skilled professionals delivering cutting-edge cloud, dev, and security services.</p>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card text-center p-4 rounded-4 shadow-sm h-100">
+            <div class="icon mb-3">
+              <img src="https://img.icons8.com/fluency/48/customer-support.png" alt="Support">
+            </div>
+            <h6 class="fw-bold">24/7 Support</h6>
+            <p class="text-muted small">We’re always available to keep your operations running smooth and secure.</p>
+          </div>
+        </div>
+  
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card text-center p-4 rounded-4 shadow-sm h-100">
+            <div class="icon mb-3">
+              <img src="https://img.icons8.com/fluency/48/rocket--v1.png" alt="Scalability">
+            </div>
+            <h6 class="fw-bold">Future-Ready</h6>
+            <p class="text-muted small">We design with scalability in mind — so your systems grow with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Custom CSS -->
+  <style>
+    .text-accent {
+      color: #0d6efd;
+    }
+  
+    .why-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #e7ecf2;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+  
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 123, 255, 0.12);
+    }
+  
+    .why-card .icon img {
+      width: 48px;
+      height: 48px;
+    }
+  </style>
+
+<!-- Case Studies Section -->
+<section id="case-studies" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h5 class="text-accent text-uppercase fw-semibold">Case Studies</h5>
+        <h2 class="fw-bold">Proven Impact Across Industries</h2>
+        <p class="text-muted">See how Cloudrigade delivered real-world success for our clients.</p>
+      </div>
+  
+      <div class="row g-4">
+        <!-- Case Study 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="case-card p-4 rounded-4 shadow-sm h-100">
+            <h5 class="fw-bold mb-2">E-commerce Cloud Migration</h5>
+            <p class="text-muted small">We seamlessly migrated a major retail platform to AWS, boosting uptime by 40% and slashing costs.</p>
+            <a href="/case-studies/ecommerce-migration" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+  
+        <!-- Case Study 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="case-card p-4 rounded-4 shadow-sm h-100">
+            <h5 class="fw-bold mb-2">Healthcare App Security Overhaul</h5>
+            <p class="text-muted small">Revamped security infrastructure for a HIPAA-compliant healthcare platform handling sensitive data.</p>
+            <a href="/case-studies/healthcare-security" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+  
+        <!-- Case Study 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="case-card p-4 rounded-4 shadow-sm h-100">
+            <h5 class="fw-bold mb-2">DevOps Automation for Fintech</h5>
+            <p class="text-muted small">Implemented CI/CD pipelines for a fintech startup, reducing deployment time by 70%.</p>
+            <a href="/case-studies/devops-fintech" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Custom CSS -->
+  <style>
+    .text-accent {
+      color: #20C997;
+    }
+  
+    .case-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #e4ebf2;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+  
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(32, 201, 151, 0.15);
+    }
+  
+    .case-card h5 {
+      color: #212529;
+    }
+  
+    .case-card a {
+      margin-top: auto;
+    }
+  </style>
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+<!-- Technology Stack Section -->
+<section id="technology-stack" class="py-5" style="background-color: #f8f9fa;">
   <div class="container text-center">
-    <!-- Heading -->
-    <h2 class="mb-4" style="color: #20C997; font-weight: 700;" data-aos="fade-down">About Cloudrigade</h2>
-    <p class="lead mb-5" style="max-width: 860px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="150">
-      At <strong>Cloudrigade Technology Private Limited</strong>, we specialize in empowering businesses through innovative digital solutions. 
-      From IT Asset Management to custom software development, we are committed to quality, agility, and delivering lasting value.
+    <h5 class="text-primary mb-2" style="color: #20C997;">Technology Stack</h5>
+    <h2 class="fw-bold mb-4">Built With Modern Tools</h2>
+    <p class="text-muted mb-5">
+      From frontend finesse to backend power and DevOps agility, we use the best tech to power your projects.
     </p>
 
-    <!-- Mission, Vision, Who We Are -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-delay="200">
-        <div class="glass-card p-4 h-100">
-          <h5 class="text-success mb-3"><i class="fas fa-bullseye me-2"></i>Our Mission</h5>
-          <p class="text-muted">To deliver intelligent, scalable, and secure technology solutions that accelerate growth and inspire innovation.</p>
+    <div class="row g-4">
+      <!-- Frontend -->
+      <div class="col-md-6 col-lg-3.5" data-aos="flip-left" data-aos-delay="100">
+        <div class="tech-card p-4 shadow bg-white rounded-4 h-100">
+          <h6 class="fw-semibold mb-3 text-dark">Frontend</h6>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png"/><small>React</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/html-5.png"/><small>HTML5</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png"/><small>CSS3</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript.png"/><small>JavaScript</small></div>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="glass-card p-4 h-100">
-          <h5 class="text-success mb-3"><i class="fas fa-eye me-2"></i>Our Vision</h5>
-          <p class="text-muted">To be a global leader in digital transformation, enabling businesses to adapt and thrive in a dynamic world.</p>
+      <!-- Backend -->
+      <div class="col-md-6 col-lg-3.5" data-aos="zoom-in-up" data-aos-delay="200">
+        <div class="tech-card p-4 shadow bg-white rounded-4 h-100">
+          <h6 class="fw-semibold mb-3 text-dark">Backend</h6>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png"/><small>Node.js</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/express.png"/><small>Express</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png"/><small>MongoDB</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/mysql-logo.png"/><small>MySQL</small></div>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4" data-aos="fade-left" data-aos-delay="400">
-        <div class="glass-card p-4 h-100">
-          <h5 class="text-success mb-3"><i class="fas fa-users me-2"></i>Who We Are</h5>
-          <p class="text-muted">We are a passionate team of developers, strategists, and innovators united by a drive to solve real-world problems through tech.</p>
+      <!-- DevOps -->
+      <div class="col-md-6 col-lg-3.5" data-aos="slide-up" data-aos-delay="300">
+        <div class="tech-card p-4 shadow bg-white rounded-4 h-100">
+          <h6 class="fw-semibold mb-3 text-dark">DevOps</h6>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png"/><small>Docker</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/kubernetes.png"/><small>Kubernetes</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/github.png"/><small>GitHub</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png"/><small>Git</small></div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Company Values -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="glass-card p-4 h-100">
-          <h6 class="text-success mb-2"><i class="fas fa-shield-alt me-2"></i>Integrity</h6>
-          <p class="text-muted">We act with honesty and honor without compromising the truth.</p>
+      <!-- Cloud -->
+      <div class="col-md-6 col-lg-3.5" data-aos="fade-left" data-aos-delay="400">
+        <div class="tech-card p-4 shadow bg-white rounded-4 h-100">
+          <h6 class="fw-semibold mb-3 text-dark">Cloud</h6>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/amazon-web-services.png"/><small>AWS</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/google-cloud.png"/><small>GCP</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/azure-1.png"/><small>Azure</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/ios-filled/48/cloud.png"/><small>Cloud</small></div>
+          </div>
         </div>
       </div>
-      <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="glass-card p-4 h-100">
-          <h6 class="text-success mb-2"><i class="fas fa-cogs me-2"></i>Innovation</h6>
-          <p class="text-muted">We encourage creative thinking and embrace modern technologies.</p>
-        </div>
-      </div>
-      <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="300">
-        <div class="glass-card p-4 h-100">
-          <h6 class="text-success mb-2"><i class="fas fa-hands-helping me-2"></i>Customer First</h6>
-          <p class="text-muted">We build lasting relationships through respect, empathy, and transparency.</p>
-        </div>
-      </div>
-      <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="400">
-        <div class="glass-card p-4 h-100">
-          <h6 class="text-success mb-2"><i class="fas fa-rocket me-2"></i>Excellence</h6>
-          <p class="text-muted">We strive for perfection in every project and consistently exceed expectations.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Call to Action -->
-    <div class="mt-5" data-aos="fade-up" data-aos-delay="500">
-      <h4 class="fw-bold mb-3">Ready to elevate your business with cutting-edge tech?</h4>
-      <a href="/contact" class="btn btn-lg" style="background-color: #20C997; color: white; border-radius: 30px;">Let’s Work Together <i class="fas fa-arrow-right ms-2"></i></a>
+      <!-- Cybersecurity -->
+      <div class="col-md-6 col-lg-3.5" data-aos="flip-up" data-aos-delay="500">
+        <div class="tech-card p-4 shadow bg-white rounded-4 h-100">
+          <h6 class="fw-semibold mb-3 text-dark">Cybersecurity Tools</h6>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/firewall.png"/><small>Firewall</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/virus-free.png"/><small>Antivirus</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/security-checked.png"/><small>IDS/IPS</small></div>
+            <div class="tech-icon"><img src="https://img.icons8.com/color/48/privacy-policy.png"/><small>DLP</small></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<!-- ABOUT US SECTION END -->
 
-<!-- AOS CSS & FontAwesome -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-<!-- Glassmorphism & Responsive Style -->
-<style>
-  .glass-card {
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 1.25rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .glass-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
-  }
-
-  .text-success {
-    color: #20C997 !important;
-  }
-
-  @media (max-width: 767.98px) {
-    .glass-card {
-      margin: 0 10px;
-    }
-  }
-</style>
-
-<!-- AOS JS Init -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init({
-    duration: 900,
-    once: true,
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true
   });
 </script>
 
-<!-- CTA -->
-<section class="py-5 bg-success text-white text-center">
-  <div class="container">
-    <h2 class="mb-3">Ready to Transform Your IT Strategy?</h2>
-    <p class="mb-4">Book a free consultation with our experts and discover scalable solutions built for your business.</p>
-    <a href="/contact" class="btn btn-light btn-lg">Get in Touch</a>
+<!-- Extra Styling -->
+<style>
+  .tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  .tech-icon:hover {
+    transform: scale(1.15) rotate(3deg);
+  }
+
+  .tech-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  }
+</style>
+
+
+  <!-- CSS -->
+  <style>
+    .tool-card {
+      transition: all 0.3s ease;
+      border: 1px solid #f1f1f1;
+    }
+  
+    .tool-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(32, 201, 151, 0.1);
+    }
+  
+    .tool-card img {
+      max-height: 48px;
+      object-fit: contain;
+    }
+  
+    .tool-card h6 {
+      color: #212529;
+    }
+  
+    .tool-card p {
+      font-size: 14px;
+    }
+  </style>
+  
+  </section>
+  
+  <!-- Light Theme Styles -->
+  <style>
+    .tech-card {
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(32, 201, 151, 0.15);
+    }
+  
+    .tech-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+  
+    .tech-icon:hover {
+      transform: scale(1.1);
+    }
+  
+    .tech-icon img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 6px;
+    }
+  
+    .tech-icon small {
+      font-size: 0.8rem;
+      color: #495057;
+    }
+  </style>
+  
+  <!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+<section id="testimonials" class="py-5" style="background-color: #ffffff;">
+  <div class="container text-center">
+    <h5 class="text-primary mb-2" style="color: #20C997;">Testimonials</h5>
+    <h2 class="fw-bold mb-5">What Our Clients Say</h2>
+
+    <div class="row g-4">
+      <!-- Testimonial Card 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card p-4 bg-white rounded-4 shadow-sm h-100">
+          <p class="text-muted">“Cloudrigade transformed our infrastructure and helped us scale effortlessly. The support is top-notch!”</p>
+          <div class="d-flex align-items-center mt-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50">
+            <div class="text-start">
+              <h6 class="mb-0 fw-semibold">Ravi Sharma</h6>
+              <small class="text-muted">CTO, FinSync</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card p-4 bg-white rounded-4 shadow-sm h-100">
+          <p class="text-muted">“Their DevOps and cybersecurity services were a game-changer for our startup. Highly recommend!”</p>
+          <div class="d-flex align-items-center mt-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50">
+            <div class="text-start">
+              <h6 class="mb-0 fw-semibold">Anjali Mehta</h6>
+              <small class="text-muted">Co-founder, SafeBank</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-card p-4 bg-white rounded-4 shadow-sm h-100">
+          <p class="text-muted">“From consultation to implementation, the Cloudrigade team was incredibly skilled and professional.”</p>
+          <div class="d-flex align-items-center mt-4">
+            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50">
+            <div class="text-start">
+              <h6 class="mb-0 fw-semibold">Amit Kapoor</h6>
+              <small class="text-muted">Product Manager, AutoAI</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: 'ease-in-out'
+  });
+</script>
 
-  <footer class="bg-dark text-white text-center p-4">
-    &copy; 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.
+<!-- Extra Styling -->
+<style>
+  .testimonial-card {
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  }
+
+  #testimonials img {
+    object-fit: cover;
+    border: 2px solid #20C997;
+  }
+</style>
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+<section id="call-to-action" class="py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10" data-aos="zoom-in">
+        <div class="cta-box p-5 rounded-4 shadow-sm bg-white">
+          <h2 class="fw-bold mb-3 text-dark">Ready to Elevate Your Business?</h2>
+          <p class="text-muted mb-4">
+            Whether it’s scaling your infrastructure, boosting security, or launching new digital solutions — we're here to help.
+          </p>
+          <a href="#contact" class="btn btn-lg btn-primary px-4 py-2" style="background-color: #20C997; border: none;">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<!-- Optional Styling -->
+<style>
+  .cta-box {
+    transition: all 0.3s ease;
+  }
+
+  .cta-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  #call-to-action .btn-primary:hover {
+    background-color: #17b48c;
+  }
+</style>
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+<section id="contact" class="py-5" style="background-color: #ffffff;">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-8" data-aos="fade-up">
+        <h5 class="text-primary mb-2" style="color: #20C997;">Contact Us</h5>
+        <h2 class="fw-bold mb-3">Let’s Build Something Great Together</h2>
+        <p class="text-muted">Got a project in mind or want to say hello? We’d love to hear from you.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control rounded-3" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control rounded-3" placeholder="Your Email" required>
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control rounded-3" placeholder="Subject" required>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control rounded-3" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-lg px-4 text-white" style="background-color: #20C997; border: none;">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+  
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<footer class="text-white pt-5" style="background-color: #111;">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand Info -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="fw-bold mb-3 text-teal">Cloudrigade</h4>
+          <p class="text-light">
+            Empowering businesses with tailored IT solutions, secure infrastructure, and innovative digital strategies.
+          </p>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-md-6 col-lg-2">
+          <h6 class="text-teal fw-semibold mb-3">Quick Links</h6>
+          <ul class="list-unstyled text-light">
+            <li><a href="/" class="text-decoration-none text-light">Home</a></li>
+            <li><a href="/services" class="text-decoration-none text-light">Services</a></li>
+            <li><a href="/about" class="text-decoration-none text-light">About</a></li>
+            <li><a href="/contact" class="text-decoration-none text-light">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Services -->
+        <div class="col-md-6 col-lg-3">
+          <h6 class="text-teal fw-semibold mb-3">Our Services</h6>
+          <ul class="list-unstyled text-light">
+            <li>IT Infrastructure</li>
+            <li>Cloud Migration</li>
+            <li>Cybersecurity</li>
+            <li>AI & Automation</li>
+          </ul>
+        </div>
+  
+        <!-- Social -->
+        <div class="col-md-6 col-lg-3">
+          <h6 class="text-teal fw-semibold mb-3">Connect with us</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-light fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light fs-5"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light fs-5"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-light fs-5"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <hr class="my-4 border-light">
+  
+      <div class="text-center text-light pb-3">
+        <small>© 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</small>
+      </div>
+    </div>
   </footer>
+  
+  <!-- Font Awesome (for icons) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+  <style>
+    .text-teal {
+      color: #20C997;
+    }
+  
+    footer a:hover {
+      color: #20C997 !important;
+    }
+  </style>
+  
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
