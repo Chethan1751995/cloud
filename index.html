@@ -499,27 +499,27 @@ body {
 
   /* Background images for each card */
   .service-bg1 {
-    background-image: url('Managed\ icon.jpg');
+    background-image: url('/Managed\ icon.jpg');
   }
 
   .service-bg2 {
-    background-image: url('Software\ icon.jpg');
+    background-image: url('/Software\ icon.jpg');
   }
 
   .service-bg3 {
-    background-image: url('cloud\ icon.jpg');
+    background-image: url('/cloud\ icon.jpg');
   }
 
   .service-bg4 {
-    background-image: url('Consultancy\ icon.jpg');
+    background-image: url('/Consultancy\ icon.jpg');
   }
 
   .service-bg5 {
-    background-image: url('Cybersecurity\ icon.jpg');
+    background-image: url('/Cybersecurity\ icon.jpg');
   }
 
   .service-bg6 {
-    background-image: url('Enable\ icon.jpg');
+    background-image: url('/Enable\ icon.jpg');
   }
 
   @media (max-width: 767px) {
@@ -1147,30 +1147,29 @@ body {
 <script>
   if (!sessionStorage.getItem('welcomeSpoken')) {
     window.addEventListener('load', () => {
-      const welcomeMessage = "Welcome to Cloudrigade Technologies Thank you for choosing us!We are happy to serve you.";
-
+      const welcomeMessage = "Welcome to Cloudrigade Technologies. Thank you for choosing us! We are happy to serve you.";
       const synth = window.speechSynthesis;
 
       const speakWelcome = () => {
         const voices = synth.getVoices();
 
-        // Try to find a female voice
+        // Try to select a female English voice
         let selectedVoice = voices.find(voice =>
           voice.name.toLowerCase().includes("female") ||
           voice.name.toLowerCase().includes("joanna") ||
           voice.name.toLowerCase().includes("susan") ||
           voice.name.toLowerCase().includes("samantha") ||
-          voice.name.toLowerCase().includes("en-us") && voice.name.toLowerCase().includes("english")
+          (voice.lang.toLowerCase().includes("en-us") && voice.name.toLowerCase().includes("english"))
         );
 
-        // Fallback to first English voice
+        // Fallback to any English voice
         if (!selectedVoice) {
           selectedVoice = voices.find(v => v.lang.startsWith("en")) || voices[0];
         }
 
         const utterance = new SpeechSynthesisUtterance(welcomeMessage);
         utterance.voice = selectedVoice;
-        utterance.pitch = 1.3; // More feminine
+        utterance.pitch = 1.3;  // More feminine
         utterance.rate = 0.95;
         utterance.lang = 'en-US';
 
@@ -1178,7 +1177,6 @@ body {
         sessionStorage.setItem('welcomeSpoken', 'true');
       };
 
-      // Wait for voices to be loaded
       if (synth.getVoices().length === 0) {
         synth.addEventListener("voiceschanged", speakWelcome);
       } else {
@@ -1186,7 +1184,6 @@ body {
       }
     });
   }
-</script>
-  
+</script> 
 </body>
 </html>
