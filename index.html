@@ -1145,45 +1145,47 @@ body {
   </style>
 
 <script>
-  if (!sessionStorage.getItem('welcomeSpoken')) {
-    window.addEventListener('load', () => {
-      const welcomeMessage = "Welcome to Cloudrigade Technologies. Thank you for choosing us! We are happy to serve you.";
-      const synth = window.speechSynthesis;
+  let welcomeSpoken = sessionStorage.getItem('welcomeSpoken');
 
-      const speakWelcome = () => {
-        const voices = synth.getVoices();
+  const speakWelcome = () => {
+    if (welcomeSpoken) return;
 
-        // Try to select a female English voice
-        let selectedVoice = voices.find(voice =>
-          voice.name.toLowerCase().includes("female") ||
-          voice.name.toLowerCase().includes("joanna") ||
-          voice.name.toLowerCase().includes("susan") ||
-          voice.name.toLowerCase().includes("samantha") ||
-          (voice.lang.toLowerCase().includes("en-us") && voice.name.toLowerCase().includes("english"))
-        );
+    const welcomeMessage = "Welcome to Cloudrigade Technologies. Thank you for choosing us! We are happy to serve you.";
+    const synth = window.speechSynthesis;
 
-        // Fallback to any English voice
-        if (!selectedVoice) {
-          selectedVoice = voices.find(v => v.lang.startsWith("en")) || voices[0];
-        }
+    const startSpeaking = () => {
+      const voices = synth.getVoices();
+      let selectedVoice = voices.find(voice =>
+        voice.name.toLowerCase().includes("female") ||
+        voice.name.toLowerCase().includes("joanna") ||
+        voice.name.toLowerCase().includes("susan") ||
+        voice.name.toLowerCase().includes("samantha") ||
+        (voice.lang.toLowerCase().includes("en-us") && voice.name.toLowerCase().includes("english"))
+      );
 
-        const utterance = new SpeechSynthesisUtterance(welcomeMessage);
-        utterance.voice = selectedVoice;
-        utterance.pitch = 1.3;  // More feminine
-        utterance.rate = 0.95;
-        utterance.lang = 'en-US';
-
-        synth.speak(utterance);
-        sessionStorage.setItem('welcomeSpoken', 'true');
-      };
-
-      if (synth.getVoices().length === 0) {
-        synth.addEventListener("voiceschanged", speakWelcome);
-      } else {
-        speakWelcome();
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith("en")) || voices[0];
       }
-    });
-  }
-</script> 
+
+      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
+      utterance.voice = selectedVoice;
+      utterance.pitch = 1.3;
+      utterance.rate = 0.95;
+      utterance.lang = 'en-US';
+
+      synth.speak(utterance);
+      sessionStorage.setItem('welcomeSpoken', 'true');
+    };
+
+    if (synth.getVoices().length === 0) {
+      synth.addEventListener("voiceschanged", startSpeaking);
+    } else {
+      startSpeaking();
+    }
+  };
+
+  // Wait for user interaction to start speaking
+  document.addEventListener('click', speakWelcome, { once: true });
+</script>
 </body>
 </html>
