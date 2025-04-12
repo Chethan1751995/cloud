@@ -13,98 +13,116 @@
       background: linear-gradient(to bottom right, #f8fcff, #f0f7f5);
       color: #333;
     }
+
     header, footer {
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     nav .nav-link:hover {
       color: #20C997 !important;
     }
+
     .hero {
-      background: url('m.jpg') center/cover no-repeat;
+      background: url('m.jpg') no-repeat center center;
       background-size: cover;
-      background-position: center center;
       color: #fff;
-      padding: 120px 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 120px 20px;
       text-align: center;
-      height: 100vh; /* Makes the section take up the full viewport height */
     }
+
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
     }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
     .section-title {
       font-weight: 600;
       margin-bottom: 30px;
       color: #20C997;
     }
+
     .icon-box {
       padding: 30px;
       background: #fff;
       border-radius: 1rem;
       box-shadow: 0 0 30px rgba(0,0,0,0.05);
     }
+
     .icon-box i {
       font-size: 2rem;
       color: #20C997;
       margin-bottom: 15px;
     }
+
     .cta {
       background: #5e7ca7ba;
       color: white;
       padding: 60px 0;
       text-align: center;
     }
+
     .cta a.btn {
       background: white;
       color: #20C997;
       font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Header / Navbar -->
-<nav class="navbar navbar-expand-lg navbar-glass">
-  <div class="container-fluid">
-    <!-- Logo -->
-    <a class="navbar-brand" href="#home">
-      <img src="https://img.icons8.com/ios-filled/50/0d6efd/cloud.png" alt="Logo">
-      Cloudrigade
-    </a>
+  <nav class="navbar navbar-expand-lg navbar-glass">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home">
+        <img src="https://img.icons8.com/ios-filled/50/0d6efd/cloud.png" alt="Logo">
+        Cloudrigade
+      </a>
 
-    <!-- Mobile toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBest" aria-controls="navbarBest" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBest" aria-controls="navbarBest" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Nav Links -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarBest">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About Us</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#services">Services</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-
-      </ul>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarBest">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="container">
       <h1>IT Managed Services</h1>
       <p class="lead">Reliable, scalable, and secure IT infrastructure management for businesses of all sizes.</p>
@@ -112,7 +130,7 @@
   </section>
 
   <!-- Features -->
-  <section class="py-5">
+  <section class="py-5" id="services">
     <div class="container">
       <h2 class="text-center section-title">Our Capabilities</h2>
       <div class="row g-4">
@@ -207,5 +225,7 @@
     <p class="mb-0">&copy; 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</p>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
