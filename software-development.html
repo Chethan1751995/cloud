@@ -3,133 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Software Development & Maintenance| Cloudrigade</title>
+  <title>Software Development & Maintenance | Cloudrigade</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-      body {
-        margin: 0;
-  font-family: 'Inter', sans-serif;
-}
-
-.navbar-glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px);
-  border-radius: 1.2rem;
-  padding: 1rem 2rem;
-  margin: 1rem auto;
-  max-width: 1200px;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  font-size: 1.6rem;
-  background: linear-gradient(135deg, #0d6efd, #20c997);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-brand img {
-  width: 30px;
-  margin-right: 10px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-}
-
-.navbar-nav .nav-link {
-  font-weight: 500;
-  color: #0d6efd;
-  margin: 0 1rem;
-  transition: color 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #20c997;
-}
-
-.btn-cta {
-  background: linear-gradient(to right, #0d6efd, #20c997);
-  color: white;
-  font-weight: 600;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: 0.3s ease-in-out;
-}
-
-.btn-cta:hover {
-  background: linear-gradient(to right, #20c997, #0d6efd);
-  transform: translateY(-2px);
-}
-
-
-    header, footer {
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
     }
 
-    nav .nav-link:hover {
-      color: #20C997 !important;
+    .navbar-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 1.2rem;
+      padding: 1rem 2rem;
+      margin: 1rem auto;
+      max-width: 1200px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #0d6efd, #20c997);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #0d6efd !important;
+      margin: 0 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #20c997 !important;
+    }
+
+    /* Hero Section with overlay */
     .hero {
-      background: url('m.jpg') no-repeat center center;
+      position: relative;
+      background: url('S.jpg') no-repeat center center;
       background-size: cover;
-      color: #fff;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding: 120px 20px;
       text-align: center;
+      padding: 100px 20px;
+      color: #fff;
+      z-index: 1;
+    }
+
+    /* Dark overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+      z-index: -1;
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     .hero p {
       font-size: 1.2rem;
+      margin-top: 10px;
+      max-width: 600px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
     }
 
     .section-title {
+      color: #20c997;
       font-weight: 600;
-      margin-bottom: 30px;
-      color: #20C997;
+      margin-bottom: 40px;
     }
 
     .icon-box {
-      padding: 30px;
       background: #fff;
+      padding: 30px;
       border-radius: 1rem;
-      box-shadow: 0 0 30px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      height: 100%;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
     }
 
     .icon-box i {
       font-size: 2rem;
-      color: #20C997;
+      color: #20c997;
       margin-bottom: 15px;
     }
 
     .cta {
-      background: #5e7ca7ba;
+      background: linear-gradient(to right, #20c997, #0d6efd);
       color: white;
-      padding: 60px 0;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .cta a.btn {
+    .cta .btn {
       background: white;
-      color: #20C997;
+      color: #20c997;
       font-weight: 600;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 4Kpx) {
+    .no-shadow {
+      box-shadow: none !important;
+      filter: none !important;
+      border-radius: 12px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 767px) {
       .hero h1 {
         font-size: 2.2rem;
       }
@@ -137,147 +157,148 @@
       .hero p {
         font-size: 1rem;
       }
+
+      .navbar-glass {
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .icon-box {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Header / Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-glass">
   <div class="container-fluid">
-    <!-- Logo -->
     <a class="navbar-brand" href="index.html">
-      <img src="https://img.icons8.com/ios-filled/50/0d6efd/cloud.png" alt="Logo">
+      <img src="logo.png" alt="Cloudrigade Logo" />
       Cloudrigade
     </a>
-
-    <!-- Mobile toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBest" aria-controls="navbarBest" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Nav Links -->
-    <div class="collapse navbar-collapse justify-content-next to Cloudrigade" id="navbarBest">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About Us</a> <!-- Link to About Us section -->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#contact">Contact</a>
-        </li>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Software Development & Maintenance</h1>
-      <p class="lead">Build, enhance, and maintain software solutions that are scalable, efficient, and tailored to your business needs.</p>
-    </div>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <div class="container text-center">
+    <h1>Software Development & Maintenance</h1>
+    <p class="lead mx-auto" style="max-width: 600px;">
+      Build, enhance, and maintain software solutions that are scalable, efficient, and tailored to your business needs.
+    </p>
+  </div>
+</section>
 
-  <!-- Features -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center section-title">Our Approach</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="icon-box text-center">
-            <i class="fas fa-cogs"></i>
-            <h5 class="mt-3">Custom Software Development</h5>
-            <p>From idea to product, we build bespoke software solutions that meet your unique business requirements.</p>
-          </div>
+<!-- Features Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Our Approach</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-cogs"></i>
+          <h5>Custom Software Development</h5>
+          <p>From idea to product, we build bespoke software solutions tailored to your unique business requirements.</p>
         </div>
-        <div class="col-md-4">
-          <div class="icon-box text-center">
-            <i class="fas fa-tools"></i>
-            <h5 class="mt-3">Application Maintenance & Optimization</h5>
-            <p>Ensure your applications run smoothly with ongoing support, updates, and optimization.</p>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-tools"></i>
+          <h5>Application Maintenance</h5>
+          <p>Keep your applications updated, optimized, and running at peak performance with our support services.</p>
         </div>
-        <div class="col-md-4">
-          <div class="icon-box text-center">
-            <i class="fas fa-users-cog"></i>
-            <h5 class="mt-3">Team Augmentation</h5>
-            <p>Our experts can integrate with your team to provide additional capacity and expertise when needed.</p>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-users-cog"></i>
+          <h5>Team Augmentation</h5>
+          <p>Scale your development capacity by integrating our experienced engineers with your internal teams.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Use Case -->
-    <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-md-6">
-          <img src="software.jpg" alt="Managed IT Use Case" class="img-fluid">
+<!-- Use Case Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <img src="software.jpg" alt="Client Success" class="img-fluid no-shadow w-100">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="section-title">Client Success Story</h2>
+        <p>We developed a custom order management platform for a retail client, leading to a 40% increase in operational efficiency and a 25% reduction in order processing time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Why Choose Cloudrigade?</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-laptop-code"></i>
+          <h6>Agile Development</h6>
+          <p>Iterative approach ensures timely deliveries and adaptation to your evolving needs.</p>
         </div>
-        <div class="col-md-6">
-          <h2 class="section-title">Client Success Story</h2>
-          <p>We developed a custom order management platform for a retail client, resulting in a 40% increase in operational efficiency and a 25% reduction in order processing time.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-shield-alt"></i>
+          <h6>Security First</h6>
+          <p>Security is woven into every phase of our development lifecycle.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-sync-alt"></i>
+          <h6>CI/CD Pipelines</h6>
+          <p>Streamlined integration and deployment with robust automation practices.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-comments"></i>
+          <h6>Client Collaboration</h6>
+          <p>We work closely with stakeholders to align every step with your goals.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Benefits -->
-  <section class="py-5">
-    <div class="container text-center">
-      <h2 class="section-title">Why Choose Cloudrigade?</h2>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="icon-box">
-            <i class="fas fa-laptop-code"></i>
-            <h6>Agile Development</h6>
-            <p>Iterative approach to ensure timely deliveries and adaptability to changing needs.</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="icon-box">
-            <i class="fas fa-shield-alt"></i>
-            <h6>Security Focus</h6>
-            <p>We prioritize security in every step of the development and maintenance process.</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="icon-box">
-            <i class="fas fa-sync-alt"></i>
-            <h6>Continuous Integration</h6>
-            <p>Automated testing, building, and deployment to streamline the process.</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="icon-box">
-            <i class="fas fa-comments"></i>
-            <h6>Client Collaboration</h6>
-            <p>We work closely with you to ensure the final product aligns with your vision.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2>Transform Your Business with Custom Software</h2>
+    <p>Let Cloudrigade build and maintain scalable solutions tailored to your business growth.</p>
+   <a href="index.html#services" class="btn btn-outline-light">Back to Home</a>
+    <a href="index.html#contact" class="btn">Start Your Project Today</a>
+   </div>
+</section>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</p>
+</footer>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2 class="mb-3">Transform Your Business with Custom Software</h2>
-      <p class="mb-4">Let Cloudrigade build and maintain software solutions that evolve with your business.</p>
-      <a href="/contact.html" class="btn btn-lg">Start Your Project Today</a>
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="text-white text-center p-4 bg-dark">
-    <p class="mb-0">&copy; 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</p>
-  </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
