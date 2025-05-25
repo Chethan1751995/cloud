@@ -3,133 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cloud Computing & SaaS Solutions | Cloudrigade</title>
+  <title>Cloud Computing & SaaS Solutions| Cloudrigade</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-  body {
-    margin: 0;
-  font-family: 'Inter', sans-serif;
-}
-
-.navbar-glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px);
-  border-radius: 1.2rem;
-  padding: 1rem 2rem;
-  margin: 1rem auto;
-  max-width: 1200px;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  font-size: 1.6rem;
-  background: linear-gradient(135deg, #0d6efd, #20c997);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-brand img {
-  width: 30px;
-  margin-right: 10px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-}
-
-.navbar-nav .nav-link {
-  font-weight: 500;
-  color: #0d6efd;
-  margin: 0 1rem;
-  transition: color 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #20c997;
-}
-
-.btn-cta {
-  background: linear-gradient(to right, #0d6efd, #20c997);
-  color: white;
-  font-weight: 600;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: 0.3s ease-in-out;
-}
-
-.btn-cta:hover {
-  background: linear-gradient(to right, #20c997, #0d6efd);
-  transform: translateY(-2px);
-}
-
-
-    header, footer {
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
     }
 
-    nav .nav-link:hover {
-      color: #20C997 !important;
+    .navbar-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 1.2rem;
+      padding: 1rem 2rem;
+      margin: 1rem auto;
+      max-width: 1200px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #0d6efd, #20c997);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #0d6efd !important;
+      margin: 0 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #20c997 !important;
+    }
+
+    /* Hero Section with overlay */
     .hero {
-      background: url('m.jpg') no-repeat center center;
+      position: relative;
+      background: url('cloud-computing.jpg') no-repeat center center;
       background-size: cover;
-      color: #fff;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding: 120px 20px;
       text-align: center;
+      padding: 100px 20px;
+      color: #fff;
+      z-index: 1;
+    }
+
+    /* Dark overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+      z-index: -1;
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     .hero p {
       font-size: 1.2rem;
+      margin-top: 10px;
+      max-width: 600px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
     }
 
     .section-title {
+      color: #20c997;
       font-weight: 600;
-      margin-bottom: 30px;
-      color: #20C997;
+      margin-bottom: 40px;
     }
 
     .icon-box {
-      padding: 30px;
       background: #fff;
+      padding: 30px;
       border-radius: 1rem;
-      box-shadow: 0 0 30px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      height: 100%;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
     }
 
     .icon-box i {
       font-size: 2rem;
-      color: #20C997;
+      color: #20c997;
       margin-bottom: 15px;
     }
 
     .cta {
-      background: #5e7ca7ba;
+      background: linear-gradient(to right, #20c997, #0d6efd);
       color: white;
-      padding: 60px 0;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .cta a.btn {
+    .cta .btn {
       background: white;
-      color: #20C997;
+      color: #20c997;
       font-weight: 600;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 4Kpx) {
+    .no-shadow {
+      box-shadow: none !important;
+      filter: none !important;
+      border-radius: 12px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 767px) {
       .hero h1 {
         font-size: 2.2rem;
       }
@@ -137,53 +157,51 @@
       .hero p {
         font-size: 1rem;
       }
+
+      .navbar-glass {
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .icon-box {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Header / Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-glass">
   <div class="container-fluid">
-    <!-- Logo -->
     <a class="navbar-brand" href="index.html">
-      <img src="https://img.icons8.com/ios-filled/50/0d6efd/cloud.png" alt="Logo">
+      <img src="logo.png" alt="Cloudrigade Logo" />
       Cloudrigade
     </a>
-
-    <!-- Mobile toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBest" aria-controls="navbarBest" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Nav Links -->
-    <div class="collapse navbar-collapse justify-content-next to Cloudrigade" id="navbarBest">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About Us</a> <!-- Link to About Us section -->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#contact">Contact</a>
-        </li>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Cloud Computing & SaaS Solutions</h1>
-      <p>Powerful, scalable, and secure cloud architectures for modern enterprises.</p>
-    </div>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <div class="container text-center">
+    <h1>Cloud Computing & SaaS Solutions</h1>
+    <p class="lead mx-auto" style="max-width: 600px;">
+      Powerful, scalable, and secure cloud architectures for modern enterprises.
+    </p>
+  </div>
+</section>
 
   <!-- Features -->
   <section class="py-5">
@@ -220,7 +238,7 @@
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-md-6">
-          <img src="/assets/use-case-cloud.svg" alt="Cloud Use Case" class="img-fluid rounded">
+          <img src="c1.jpg" alt="Cloud Use Case" class="img-fluid rounded">
         </div>
         <div class="col-md-6">
           <h2 class="section-title">Client Success Story</h2>
@@ -272,14 +290,16 @@
     <div class="container">
       <h2 class="mb-3">Future-Proof Your Business</h2>
       <p class="mb-4">Tap into the power of cloud to innovate faster, scale efficiently, and reduce operational friction.</p>
-      <a href="/contact.html" class="btn btn-lg">Talk to Our Cloud Architects</a>
+      <a href="index.html#services" class="btn btn-outline-light">Back to Home</a> 
+      <a href="index.html#contact" class="btn btn-outline-light">Talk to Our Cloud Architects</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-white text-center p-4 bg-dark">
-    <p class="mb-0">&copy; 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</p>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
