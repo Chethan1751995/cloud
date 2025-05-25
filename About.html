@@ -461,20 +461,38 @@
     </div>
   </div>
 </footer>
-<!-- WhatsApp Chat Widget -->
-<script>
-  (function () {
-    const options = {
-      whatsapp: "+919876543210",
-      call_to_action: "Message us",
-      position: "right",
-    };
-    const proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-    const s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-    s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-    const x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-  })();
-</script>
+ <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919876543210" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Chat with us on WhatsApp">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" 
+       alt="WhatsApp" />
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  .whatsapp-float img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+</style>
 
   <!-- Smooth Scroll -->
   <style>
