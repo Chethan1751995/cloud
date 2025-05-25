@@ -39,8 +39,8 @@ body {
 }
 
 .navbar-brand img {
-  width: 30px;
-  margin-right: 10px;
+  width: 60px;
+  margin-right: 1px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
@@ -80,7 +80,7 @@ body {
   <div class="container-fluid">
     <!-- Logo -->
     <a class="navbar-brand" href="#home">
-      <img src="https://img.icons8.com/ios-filled/50/0d6efd/cloud.png" alt="Logo">
+      <img src="/logo.png" alt="Logo" style="height: 40px;" />
       Cloudrigade
     </a>
 
@@ -90,9 +90,8 @@ body {
     </button>
 
     <!-- Nav Links -->
-    <div class="collapse navbar-collapse justify-content-next to Cloudrigade" id="navbarBest">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-
+    <div class="collapse navbar-collapse" id="navbarBest">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
         </li>
@@ -108,6 +107,10 @@ body {
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
         </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
       </ul>
@@ -196,6 +199,8 @@ body {
         </div>
       </div>
     </div>
+</section>
+
 
     <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -247,15 +252,15 @@ body {
       text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
     }
   
-    @media (max-width: 4Kpx) {
-      .carousel-overlay h1 {
-        font-size: 1.8rem;
-      }
-  
-      .carousel-overlay p {
-        font-size: 1rem;
-      }
-    }
+    @media (max-width: 576px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero p.lead {
+    font-size: 1rem;
+  }
+}
+
   </style>
   
 
@@ -300,7 +305,7 @@ body {
             <p class="text-muted">
               Our team thrives on collaboration, agility, and continuous learning. With a growing portfolio of successful deployments and long-term partnerships, Cloudrigade is more than just a service provider — we are your innovation partner.
             </p>
-            <a href="#contact" class="btn btn-accent mt-3">Learn More</a>
+            <a href="About.html" class="btn btn-accent mt-3">Learn More</a>
           </div>
           <div class="tab-pane fade" id="mission" role="tabpanel">
             <h3 class="fw-bold mb-3 text-dark">Our Mission</h3>
@@ -351,15 +356,13 @@ body {
     </div>
   </div>
 </section>
-
-<!-- Styles -->
 <style>
   body {
     font-family: 'Inter', sans-serif;
   }
 
   .text-accent {
-    color: #0d6efd;
+    color: #12ff8c !important;
   }
 
   .btn-accent {
@@ -392,7 +395,15 @@ body {
   }
 
   .tab-content {
-    background: #ffffff;
+    background-color: #ffffff !important; /* Force white background */
+    color: #0d6efd !important; /* Force text color blue */
+  }
+
+  .tab-content h3,
+  .tab-content p,
+  .tab-content li,
+  .tab-content ul {
+    color: #0d6efd !important; /* Force all text inside to blue */
   }
 
   @media (max-width: 4Kpx) {
@@ -404,148 +415,107 @@ body {
 </style>
 
 <!-- Services Overview Section -->
-<section id="services" class="py-5 position-relative" style="background-image: url('AI.jpg'); background-size: cover; background-position: center;">
-  <div class="container">
-    <div class="text-center mb-5">
+<section id="services" class="py-5 position-relative text-light" style="background-image: url('AI.jpg'); background-size: cover; background-position: center;">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
+
+  <div class="container position-relative" style="z-index: 2;">
+    <div class="text-center mb-5" data-aos="fade-down">
       <h5 class="text-accent fw-semibold text-uppercase">What We Offer</h5>
       <h2 class="fw-bold">Our Core Services</h2>
       <p class="text-muted">Cloudrigade delivers robust, secure, and scalable tech solutions tailored to your needs.</p>
     </div>
 
     <div class="row g-4">
-      <!-- Service 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="service-card service-bg1 p-4 rounded-4 h-100 shadow-sm text-center">
+      <!-- Loop through services -->
+      <div class="col-12 col-md-6" data-aos="fade-up" data-tilt>
+        <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
           <h5 class="fw-bold">IT Managed Services</h5>
           <p class="text-muted">Setup and manage reliable, secure, and scalable IT infrastructure.</p>
-          <a href="it-managed.html" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
-
+          <a href="it-managed.html" class="btn btn-outline-light btn-sm mt-2">Learn More</a>
         </div>
       </div>
 
-      <!-- Service 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="service-card service-bg2 p-4 rounded-4 h-100 shadow-sm text-center">
+      <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100" data-tilt>
+        <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
           <h5 class="fw-bold">Software Development & Maintenance</h5>
           <p class="text-muted">Build high-performance web and mobile applications tailored to your needs.</p>
-          <a href="software-development.html" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
-
+          <a href="software-development.html" class="btn btn-outline-light btn-sm mt-2">Learn More</a>
         </div>
       </div>
 
-      <!-- Service 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="service-card service-bg3 p-4 rounded-4 h-100 shadow-sm text-center">
+      <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200" data-tilt>
+        <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
           <h5 class="fw-bold">Cloud Computing & SaaS Solutions</h5>
           <p class="text-muted">Migrate, manage, and scale in the cloud with confidence.</p>
-          <a href="cloud-solutions.html" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
-
+          <a href="cloud-solutions.html" class="btn btn-outline-light btn-sm mt-2">Learn More</a>
         </div>
       </div>
 
-      <!-- Service 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="service-card service-bg4 p-4 rounded-4 h-100 shadow-sm text-center">
+      <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300" data-tilt>
+        <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
           <h5 class="fw-bold">IT Consultancy & Digital Transformation</h5>
           <p class="text-muted">Strategic guidance to optimize your tech stack and digital roadmap.</p>
-          <a href="consulting.html" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
-
+          <a href="consulting.html" class="btn btn-outline-light btn-sm mt-2">Learn More</a>
         </div>
       </div>
 
-      <!-- Service 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="service-card service-bg5 p-4 rounded-4 h-100 shadow-sm text-center">
+      <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400" data-tilt>
+        <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
           <h5 class="fw-bold">Cybersecurity & Data Protection</h5>
           <p class="text-muted">Protect your digital assets with modern security strategies and tools.</p>
-          <a href="cybersecurity.html" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
-
+          <a href="cybersecurity.html" class="btn btn-outline-light btn-sm mt-2">Learn More</a>
         </div>
       </div>
 
-      <!-- Service 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="service-card service-bg6 p-4 rounded-4 h-100 shadow-sm text-center">
-          <h5 class="fw-bold">IT-Enabled Services(ITES)</h5>
-          <p class="text-muted">digital business operations, customer interaction tools, employee efficiency boosters.</p>
-          <a href="Enabled.html" class="btn btn-outline-primary btn-sm mt-2">Learn More</a>
-
+      <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="500" data-tilt>
+        <div class="service-card p-4 rounded-4 h-100 shadow-sm text-center">
+          <h5 class="fw-bold">IT-Enabled Services (ITES)</h5>
+          <p class="text-muted">Digital business operations, customer interaction tools, employee efficiency boosters.</p>
+          <a href="Enabled.html" class="btn btn-outline-light btn-sm mt-2">Learn More</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Custom CSS for Services -->
+<!-- Custom CSS -->
 <style>
   .text-accent {
-    color: #0d6efd;
+    color: #20C997;
   }
 
   .service-card {
     position: relative;
-    color: #000;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 
   .service-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
   }
 
-  /* Background images for each card */
-  .service-bg1 {
-    background-image: url('Managed\ icon.jpg');
-  }
-
-  .service-bg2 {
-    background-image: url('Software\ icon.jpg');
-  }
-
-  .service-bg3 {
-    background-image: url('cloud\ icon.jpg');
-  }
-
-  .service-bg4 {
-    background-image: url('Consultancy\ icon.jpg');
-  }
-
-  .service-bg5 {
-    background-image: url('Cybersecurity\ icon.jpg');
-  }
-
-  .service-bg6 {
-    background-image: url('Enable\ icon.jpg');
-  }
-
-  @media (max-width: 4Kpx) {
-    .service-card {
-      text-align: center;
-    }
-  }
-
-  /* Optional: dim background inside each card */
-  .service-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.75);
-    z-index: 0;
-    border-radius: inherit;
-  }
-
-  .service-card > * {
-    position: relative;
-    z-index: 1;
+  .text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
   }
 </style>
 
+<!-- Scripts -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+<script>
+  AOS.init({ once: true, duration: 1000 });
+  VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+    max: 8,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.2,
+  });
+</script>
 
 
 <!-- Why Choose Us Section -->
@@ -643,8 +613,8 @@ body {
         <div class="col-md-6 col-lg-4">
           <div class="case-card p-4 rounded-4 shadow-sm h-100">
             <h5 class="fw-bold mb-2">E-commerce Cloud Migration</h5>
-            <p class="text-muted small">We seamlessly migrated a major retail platform to AWS, boosting uptime by 40% and slashing costs.</p>
-            <a href="/case-studies/ecommerce-migration" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+            <p>We seamlessly migrated a major retail platform to AWS, boosting uptime by 40% and slashing costs.</p>
+            <a href="ecommerce-migration.html" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
           </div>
         </div>
   
@@ -652,8 +622,8 @@ body {
         <div class="col-md-6 col-lg-4">
           <div class="case-card p-4 rounded-4 shadow-sm h-100">
             <h5 class="fw-bold mb-2">Healthcare App Security Overhaul</h5>
-            <p class="text-muted small">Revamped security infrastructure for a HIPAA-compliant healthcare platform handling sensitive data.</p>
-            <a href="/case-studies/healthcare-security" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+            <p>Revamped security infrastructure for a HIPAA-compliant healthcare platform handling sensitive data.</p>
+            <a href="healthcare-security.html" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
           </div>
         </div>
   
@@ -661,8 +631,8 @@ body {
         <div class="col-md-6 col-lg-4">
           <div class="case-card p-4 rounded-4 shadow-sm h-100">
             <h5 class="fw-bold mb-2">DevOps Automation for Fintech</h5>
-            <p class="text-muted small">Implemented CI/CD pipelines for a fintech startup, reducing deployment time by 70%.</p>
-            <a href="/case-studies/devops-fintech" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+            <p>Implemented CI/CD pipelines for a fintech startup, reducing deployment time by 70%.</p>
+            <a href="devops-fintech.html" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
           </div>
         </div>
       </div>
@@ -872,7 +842,7 @@ body {
   
     .tech-icon small {
       font-size: 0.8rem;
-      color: #495057;
+      color: #49574c;
     }
   </style>
   
@@ -888,12 +858,12 @@ body {
       <!-- Testimonial Card 1 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
         <div class="testimonial-card p-4 bg-white rounded-4 shadow-sm h-100">
-          <p class="text-muted">“Cloudrigade transformed our infrastructure and helped us scale effortlessly. The support is top-notch!”</p>
+          <p>“Cloudrigade transformed our infrastructure and helped us scale effortlessly. The support is top-notch!”</p>
           <div class="d-flex align-items-center mt-4">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50">
+            <img src="" alt="Client" class="rounded-circle me-3" width="50" height="50">
             <div class="text-start">
-              <h6 class="mb-0 fw-semibold">Ravi Sharma</h6>
-              <small class="text-muted">CTO, FinSync</small>
+              <h6 class="mb-0 fw-semibold"></h6>
+              <small class="text-muted"></small>
             </div>
           </div>
         </div>
@@ -902,12 +872,12 @@ body {
       <!-- Testimonial Card 2 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
         <div class="testimonial-card p-4 bg-white rounded-4 shadow-sm h-100">
-          <p class="text-muted">“Their DevOps and cybersecurity services were a game-changer for our startup. Highly recommend!”</p>
+          <p>“Their DevOps and cybersecurity services were a game-changer for our startup. Highly recommend!”</p>
           <div class="d-flex align-items-center mt-4">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50">
+            <img src="" alt="Client" class="rounded-circle me-3" width="50" height="50">
             <div class="text-start">
-              <h6 class="mb-0 fw-semibold">Anjali Mehta</h6>
-              <small class="text-muted">Co-founder, SafeBank</small>
+              <h6 class="mb-0 fw-semibold"></h6>
+              <small class="text-muted"></small>
             </div>
           </div>
         </div>
@@ -916,12 +886,12 @@ body {
       <!-- Testimonial Card 3 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
         <div class="testimonial-card p-4 bg-white rounded-4 shadow-sm h-100">
-          <p class="text-muted">“From consultation to implementation, the Cloudrigade team was incredibly skilled and professional.”</p>
+          <p>“From consultation to implementation, the Cloudrigade team was incredibly skilled and professional.”</p>
           <div class="d-flex align-items-center mt-4">
-            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50">
+            <img src="" alt="Client" class="rounded-circle me-3" width="50" height="50">
             <div class="text-start">
-              <h6 class="mb-0 fw-semibold">Amit Kapoor</h6>
-              <small class="text-muted">Product Manager, AutoAI</small>
+              <h6 class="mb-0 fw-semibold"></h6>
+              <small class="text-muted"></small>
             </div>
           </div>
         </div>
@@ -1005,10 +975,11 @@ body {
 <!-- AOS CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
 
+<!-- Contact Section -->
 <section id="contact" class="py-5" style="background-color: #ffffff;">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
-      <div class="col-lg-8" data-aos="fade-up">
+      <div class="col-lg-8">
         <h5 class="text-primary mb-2" style="color: #20C997;">Contact Us</h5>
         <h2 class="fw-bold mb-3">Let’s Build Something Great Together</h2>
         <p class="text-muted">Got a project in mind or want to say hello? We’d love to hear from you.</p>
@@ -1016,25 +987,32 @@ body {
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-        <form>
+      <div class="col-lg-8">
+        <form id="contactForm" action="https://your-backend-url.com/api/contact" method="POST" novalidate>
           <div class="row g-3">
             <div class="col-md-6">
-              <input type="text" class="form-control rounded-3" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control rounded-3" placeholder="Your Name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="col-md-6">
-              <input type="email" class="form-control rounded-3" placeholder="Your Email" required>
+              <input type="email" name="email" class="form-control rounded-3" placeholder="Your Email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
             </div>
             <div class="col-12">
-              <input type="text" class="form-control rounded-3" placeholder="Subject" required>
+              <input type="text" name="subject" class="form-control rounded-3" placeholder="Subject" required>
+              <div class="invalid-feedback">Please enter a subject.</div>
             </div>
             <div class="col-12">
-              <textarea class="form-control rounded-3" rows="5" placeholder="Your Message" required></textarea>
+              <textarea name="message" class="form-control rounded-3" rows="5" placeholder="Your Message" required></textarea>
+              <div class="invalid-feedback">Please enter your message.</div>
             </div>
             <div class="col-12 text-center">
               <button type="submit" class="btn btn-lg px-4 text-white" style="background-color: #20C997; border: none;">
                 Send Message
               </button>
+            </div>
+            <div class="col-12 mt-3 text-center">
+              <div id="formAlert" class="alert" role="alert" style="display: none;"></div>
             </div>
           </div>
         </form>
@@ -1043,152 +1021,345 @@ body {
   </div>
 </section>
 
+<!-- Optional JS to handle form -->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const payload = {};
+    formData.forEach((value, key) => payload[key] = value);
+
+    const alertBox = document.getElementById("formAlert");
+    alertBox.style.display = "none";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
+
+      alertBox.style.display = "block";
+      alertBox.className = "alert alert-success";
+      alertBox.innerText = result.message || "Your message has been sent!";
+      form.reset();
+    } catch (error) {
+      alertBox.style.display = "block";
+      alertBox.className = "alert alert-danger";
+      alertBox.innerText = "Something went wrong. Please try again.";
+    }
+  });
+</script>
+
+
 <!-- AOS JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
+
+  // Basic client-side form validation and submission with fetch API
+  const form = document.getElementById('contactForm');
+  const alertBox = document.getElementById('formAlert');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Reset alert
+    alertBox.style.display = 'none';
+    alertBox.textContent = '';
+
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+
+    // Collect form data
+    const formData = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      subject: form.subject.value.trim(),
+      message: form.message.value.trim(),
+    };
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alertBox.style.display = 'block';
+        alertBox.className = 'alert alert-success';
+        alertBox.textContent = 'Thank you! Your message has been sent.';
+        form.reset();
+        form.classList.remove('was-validated');
+      } else {
+        throw new Error('Failed to send message.');
+      }
+    } catch (error) {
+      alertBox.style.display = 'block';
+      alertBox.className = 'alert alert-danger';
+      alertBox.textContent = 'Oops! Something went wrong. Please try again later.';
+    }
+  });
 </script>
 
-  
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<footer class="text-white pt-5" style="background-color: #111;">
-    <div class="container">
-      <div class="row g-4">
-        <!-- Brand Info -->
-        <div class="col-md-6 col-lg-4">
-          <h4 class="fw-bold mb-3 text-teal">Cloudrigade</h4>
-          <p class="text-light">
-            Empowering businesses with tailored IT solutions, secure infrastructure, and innovative digital strategies.
-          </p>
-        </div>
-  
-        <!-- Quick Links -->
-        <div class="col-md-6 col-lg-2">
-          <h6 class="text-teal fw-semibold mb-3">Quick Links</h6>
-          <ul class="list-unstyled text-light">
-            <li><a href="/" class="text-decoration-none text-light">Home</a></li>
-            <li><a href="/services" class="text-decoration-none text-light">Services</a></li>
-            <li><a href="/about" class="text-decoration-none text-light">About</a></li>
-            <li><a href="/contact" class="text-decoration-none text-light">Contact</a></li>
-          </ul>
-        </div>
-  
-        <!-- Services -->
-        <div class="col-md-6 col-lg-3">
-          <h6 class="text-teal fw-semibold mb-3">Our Services</h6>
-          <ul class="list-unstyled text-light">
-            <li>IT Infrastructure</li>
-            <li>Cloud Migration</li>
-            <li>Cybersecurity</li>
-            <li>AI & Automation</li>
-          </ul>
-        </div>
-  
-      <!-- Contact Info -->
-  <div class="col-md-6 col-lg-3">
-    <h6 class="text-teal fw-semibold mb-3">Connect with Us</h6>
-    <p class="text-light">Follow us on social media or reach out via WhatsApp for any inquiries.</p>
-
-    <div class="d-flex justify-content-start gap-3">
-      <!-- WhatsApp -->
-      <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp">
-        <img src="whatsapp.jpg" alt="WhatsApp" style="width:24px; height:24px;">
-      </a>
-      
-
-      <!-- LinkedIn -->
-      <a href="https://linkedin.com/company/yourcompany" target="_blank" title="LinkedIn">
-        <img src="linkedln.png" alt="LinkedIn" style="width:24px; height:24px;">
-      </a>
-      
-
-      <!-- Twitter -->
-      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">
-        <img src="Twitter.jpg" alt="Twitter" style="width:24px; height:24px;">
-      </a>
-      
-
-      <!-- Instagram -->
-      <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram">
-        <img src="Instagram.jpg" alt="Instagram" style="width:24px; height:24px;">
-      </a>
-      
-
-    </div>
-  </div>
-
-  <!-- Font Awesome (for social icons) -->
+<!-- Font Awesome (for social icons) -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-</div>
+<style>
+  footer {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Open Sans', sans-serif;
+  }
 
+  .text-teal {
+    color: #20C997 !important;
+  }
 
-<hr class="my-4 border-light">
+  footer a {
+    color: #eee;
+    text-decoration: none;
+  }
 
-<div class="text-center text-light pb-3">
-  <small>© 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</small>
-</div>
-</div>
+  footer a:hover {
+    color: #20C997;
+  }
+
+  .address-box {
+    background-color: #1c1c1c;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+
+  .india-flag {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  .address-header {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #20C997;
+  }
+
+  .map-link {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #20C997;
+    color: #111;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(32, 201, 151, 0.4);
+  }
+
+  .map-link:hover {
+    background-color: #1ab089;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(26, 176, 137, 0.6);
+  }
+
+  .map-link i {
+    font-size: 1.25rem;
+  }
+
+  .footer-divider {
+    border-color: #444;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 576px) {
+    .address-box {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<footer class="pt-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Brand Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="fw-bold mb-3 text-teal">Cloudrigade</h4>
+        <p>
+          Empowering businesses with tailored IT solutions, secure infrastructure, and innovative digital strategies.
+        </p>
+
+        <!-- Address Box BELOW Cloudrigade -->
+        <div class="address-box">
+          <div class="address-header">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                 alt="India Flag" class="india-flag" />
+            India Branch:
+          </div>
+
+          <div>
+            C/O ASHOK, SRIRAMPANDITH 269<br />
+            ADDIGANAHALLI, Yelahanka Rajanakunte,<br />
+            Bangalore North - 560064, Karnataka India
+          </div>
+
+          <a href="https://www.google.com/maps/dir/?api=1&destination=13.17294227119414,77.5670985301588"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="map-link d-block mt-2"
+             aria-label="Get directions to India Branch via Google Maps">
+            🚗 <strong>Get Directions</strong>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h6 class="text-teal fw-semibold mb-3">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-teal fw-semibold mb-3">Our Services</h6>
+        <ul class="list-unstyled">
+          <li><a href="it-managed.html">IT Managed Services</a></li>
+          <li><a href="software-development.html">Software Development & Maintenance</a></li>
+          <li><a href="cloud-solutions.html">Cloud Computing & SaaS Solutions</a></li>
+          <li><a href="consulting.html">IT Consultancy & Digital Transformation</a></li>
+          <li><a href="cybersecurity.html">Cybersecurity & Data Protection</a></li>
+          <li><a href="Enabled.html">IT-Enabled Services (ITES)</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect Us -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-teal fw-semibold mb-3">Connect Us</h6>
+        <p><strong>Email:</strong> info@cloudrigade.com<br />
+           <strong>Phone:</strong> +919876543210</p>
+
+        <p>Follow us on social media or reach out via WhatsApp for any inquiries.</p>
+        <ul class="d-flex gap-3 list-unstyled mb-3">
+          <li><a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://cloudrigade.hi.link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="my-4 footer-divider" />
+
+    <div class="text-center pb-3" style="color: #bbb;">
+      <small>© 2025 Cloudrigade Technologies Pvt. Ltd. All rights reserved.</small>
+    </div>
+  </div>
 </footer>
-
-  <!-- Font Awesome (for icons) -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  
-  <style>
-    .text-teal {
-      color: #20C997;
-    }
-  
-    footer a:hover {
-      color: #20C997 !important;
-    }
-  </style>
-
+<!-- WhatsApp Chat Widget -->
 <script>
-  let welcomeSpoken = sessionStorage.getItem('welcomeSpoken');
+  (function () {
+    const options = {
+      whatsapp: "+919876543210",
+      call_to_action: "Message us",
+      position: "right",
+    };
+    const proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+    const s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+    s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+    const x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+  })();
+</script>
 
-  const speakWelcome = () => {
-    if (welcomeSpoken) return;
 
-    const welcomeMessage = "Welcome to Cloudrigade Technologies. Thank you for choosing us! We are happy to serve you.";
-    const synth = window.speechSynthesis;
-
-    const startSpeaking = () => {
-      const voices = synth.getVoices();
-      let selectedVoice = voices.find(voice =>
-        voice.name.toLowerCase().includes("female") ||
-        voice.name.toLowerCase().includes("joanna") ||
-        voice.name.toLowerCase().includes("susan") ||
-        voice.name.toLowerCase().includes("samantha") ||
-        (voice.lang.toLowerCase().includes("en-us") && voice.name.toLowerCase().includes("english"))
-      );
-
-      if (!selectedVoice) {
-        selectedVoice = voices.find(v => v.lang.startsWith("en")) || voices[0];
-      }
-
-      const utterance = new SpeechSynthesisUtterance(welcomeMessage);
-      utterance.voice = selectedVoice;
-      utterance.pitch = 1.3;
-      utterance.rate = 0.95;
-      utterance.lang = 'en-US';
-
-      synth.speak(utterance);
-      sessionStorage.setItem('welcomeSpoken', 'true');
+ <!-- Font Awesome (for icons) -->
+<script>
+  (() => {
+    const welcomeMessages = {
+      'en': "Welcome to Cloudrigade Technologies. Thank you for choosing us! We are happy to serve you.",
+      'hi': "क्लाउड्रिगेड टेक्नोलॉजीज़ में आपका स्वागत है। हमें चुनने के लिए धन्यवाद!",
+      'es': "Bienvenido a Cloudrigade Technologies. ¡Gracias por elegirnos!",
+      'fr': "Bienvenue chez Cloudrigade Technologies. Merci de nous avoir choisis !",
+      'de': "Willkommen bei Cloudrigade Technologies. Danke, dass Sie sich für uns entschieden haben!"
     };
 
-    if (synth.getVoices().length === 0) {
-      synth.addEventListener("voiceschanged", startSpeaking);
-    } else {
-      startSpeaking();
-    }
-  };
+    let welcomeSpoken = sessionStorage.getItem('welcomeSpoken');
+    let hasSpoken = false;
 
-  // Wait for user interaction to start speaking
-  document.addEventListener('scroll', speakWelcome, { once: true });
+    const speakWelcome = () => {
+      if (welcomeSpoken || hasSpoken || !('speechSynthesis' in window)) return;
+
+      const synth = window.speechSynthesis;
+      const userLang = navigator.language.slice(0, 2); // e.g., 'en', 'fr', 'hi'
+      const lang = welcomeMessages[userLang] ? userLang : 'en';
+      const message = welcomeMessages[lang];
+
+      const speak = () => {
+        if (hasSpoken) return;
+
+        let voices = synth.getVoices();
+        if (!voices.length) return;
+
+        let selectedVoice = voices.find(v => 
+          v.lang.toLowerCase().startsWith(lang)
+        ) || voices.find(v => v.lang.toLowerCase().includes('en')) || voices[0];
+
+        const utterance = new SpeechSynthesisUtterance(message);
+        utterance.voice = selectedVoice;
+        utterance.lang = selectedVoice.lang;
+        utterance.pitch = 1.1;
+        utterance.rate = 0.95;
+
+        synth.cancel();
+        synth.speak(utterance);
+
+        hasSpoken = true;
+        sessionStorage.setItem('welcomeSpoken', 'true');
+      };
+
+      if (synth.getVoices().length === 0) {
+        synth.addEventListener('voiceschanged', speak, { once: true });
+      } else {
+        speak();
+      }
+    };
+
+    const triggerOnce = () => {
+      speakWelcome();
+      document.removeEventListener('scroll', triggerOnce);
+      document.removeEventListener('click', triggerOnce);
+    };
+
+    document.addEventListener('scroll', triggerOnce, { once: true });
+    document.addEventListener('click', triggerOnce, { once: true });
+  })();
 </script>
+
 
 </body>
 </html>
